@@ -1,0 +1,16 @@
+/*
+-webkit-text-size-adjust: 100%;
+-webkit-font-smoothing: antialiased;
+*/
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.2rem;
+}

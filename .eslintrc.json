@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "import/no-named-default": 0,
+    "import/prefer-default-export": 0,
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ]
+  },
+  "settings": {
+    "polyfills": [
+      "fetch"
+    ]
+  }
+}
