@@ -1,9 +1,9 @@
 {
   "name": "sample-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "Alan Kavishe",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "start": "yarn dev:start",
