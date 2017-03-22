@@ -4,7 +4,6 @@
   "main": "index.js",
   "author": "Alan Kavishe",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "start": "yarn dev:start",
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
