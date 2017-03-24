@@ -1,21 +1,34 @@
 // @flow
 
+import "babel-polyfill";
+import injectTapEventPlugin from "react-tap-event-plugin";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import Helmet from "react-helmet";
 import { Provider } from "react-redux";
 import { StaticRouter } from "react-router";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import initStore from "./init-store";
 import App from "./../shared/app";
 import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT, isProd } from "../shared/config";
 
-const renderApp = (location: string, plainPartialState: ?Object, routerContext: ?Object = {}) => {
+injectTapEventPlugin();
+
+const renderApp = (location: string, reqParams: Object, plainPartialState: ?Object, routerContext: ?Object = {}) => {
   const store = initStore(plainPartialState);
+
+  const muiTheme = getMuiTheme({
+    userAgent: reqParams.userAgent,
+  });
+
   const appHtml = ReactDOMServer.renderToString(
     <Provider store={store}>
       <StaticRouter location={location} context={routerContext}>
-        <App />
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <App />
+        </MuiThemeProvider>
       </StaticRouter>
     </Provider>,
   );

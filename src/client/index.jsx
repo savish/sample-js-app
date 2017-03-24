@@ -13,6 +13,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { combineReducers } from "redux-immutable";
 import thunkMiddleware from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import App from "../shared/app";
 import { APP_CONTAINER_SELECTOR, isProd } from "../shared/config";
@@ -45,7 +46,9 @@ const wrapApp = (AppComponent, reduxStore) => (
   <Provider store={reduxStore}>
     <BrowserRouter>
       <AppContainer>
-        <AppComponent />
+        <MuiThemeProvider>
+          <AppComponent />
+        </MuiThemeProvider>
       </AppContainer>
     </BrowserRouter>
   </Provider>
