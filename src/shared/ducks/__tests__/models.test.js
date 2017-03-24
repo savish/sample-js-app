@@ -12,6 +12,11 @@ test("reducer should return the same state with no action", () => {
   expect(I.is(reducer(I.fromJS(state)), I.Map(state))).toBe(true);
 });
 
+test("reducer should return the same state with an empty action", () => {
+  const state = { test: "state" };
+  expect(I.is(reducer(I.fromJS(state), {}), I.Map(state))).toBe(true);
+});
+
 /* eslint-disable no-console */
 test("models.modelSaga should yield a call to console.log first", () => {
   expect(_.isEqual(models.modelSaga().next().value, call(console.log, "Hello, sagas!"))).toBe(true);
