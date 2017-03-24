@@ -7,6 +7,8 @@ import { call } from "redux-saga/effects";
 import type { Action } from "../types";
 
 const reducer = (state: Im = I.fromJS({}), action: Action) => {
+  if (!action) return state;
+
   switch (action.type) {
     default:
       return state;
