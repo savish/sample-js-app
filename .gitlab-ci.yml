@@ -19,5 +19,7 @@ cache:
 
 test_async:
   script:
+   - apt-get update -qq
+   - apt-get install -qy libelf1
    - yarn
    - yarn test
