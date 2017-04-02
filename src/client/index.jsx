@@ -1,7 +1,6 @@
 // @flow
 
 import "babel-polyfill";
-import injectTapEventPlugin from "react-tap-event-plugin";
 
 import { default as I } from "immutable";
 import React from "react";
@@ -13,13 +12,10 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { combineReducers } from "redux-immutable";
 import thunkMiddleware from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import App from "../shared/app";
 import { APP_CONTAINER_SELECTOR, isProd } from "../shared/config";
 import models, { modelSaga } from "../shared/ducks/models";
-
-injectTapEventPlugin();
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -46,9 +42,7 @@ const wrapApp = (AppComponent, reduxStore) => (
   <Provider store={reduxStore}>
     <BrowserRouter>
       <AppContainer>
-        <MuiThemeProvider>
-          <AppComponent />
-        </MuiThemeProvider>
+        <AppComponent />
       </AppContainer>
     </BrowserRouter>
   </Provider>

@@ -6,7 +6,7 @@ import { HOME_PAGE_ROUTE } from "../shared/routes";
 
 export default (app: Object) => {
   app.get(HOME_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, { userAgent: req.headers["user-agent"] }, homePage()));
+    res.send(renderApp(req.url, homePage()));
   });
 
   app.get("*", (req, res) => {
