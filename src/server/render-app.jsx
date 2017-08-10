@@ -32,7 +32,6 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
         <link rel="shotcut icon" type="image/x-icon" href="${STATIC_PATH}/images/favicon.ico">
-        <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>

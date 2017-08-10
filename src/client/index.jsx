@@ -2,7 +2,7 @@
 
 import "babel-polyfill";
 
-import { default as I } from "immutable";
+import I from "immutable";
 import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
@@ -16,6 +16,8 @@ import createSagaMiddleware from "redux-saga";
 import App from "../shared/app";
 import { APP_CONTAINER_SELECTOR, isProd } from "../shared/config";
 import models, { modelSaga } from "../shared/ducks/models";
+
+import "../shared/styles/global";
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
