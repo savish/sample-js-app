@@ -5,5 +5,5 @@ import HomePage from "../home";
 
 test("HomePage renders a heading", () => {
   const homePage = shallow(<HomePage />);
-  expect(homePage.find("h1").text()).toEqual("Awesome goes here");
+  expect(homePage.find("h1").text()).toEqual("Awesome goes here...");
 });
